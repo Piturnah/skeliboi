@@ -65,7 +65,7 @@ public class Controller2D : MonoBehaviour
                     Debug.Log("Hit hazard");
                     cooldownGoneTime = Time.time + invulnCooldown;
 
-                    playerScript.velocity.x = Mathf.Clamp(playerScript.velocity.x - 15f, 0, float.MaxValue);
+                    playerScript.velocity.x = Mathf.Clamp(playerScript.velocity.x - 5f, 0, float.MaxValue);
                     continue;
                 }
             }

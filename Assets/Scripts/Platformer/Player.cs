@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     float maxJumpHeight = 3.65f;
     float minJumpHeight = 1;
     float timeToJumpApex = .3f;
-    float moveAcceleration = 10;
+    float moveAcceleration = 2;
 
     public float gravity;
     public float maxJumpVelocity;
@@ -24,7 +24,7 @@ public class Player : MonoBehaviour
         maxJumpVelocity = Mathf.Abs(gravity) * timeToJumpApex;
         minJumpVelocity = Mathf.Sqrt(2 * Mathf.Abs(gravity) * minJumpHeight);
 
-        velocity.x = 40;
+        velocity.x = 25;
     }
 
     private void Update() {
@@ -43,7 +43,7 @@ public class Player : MonoBehaviour
         }
 
         velocity.x += moveAcceleration * Time.deltaTime;
-        velocity.x = Mathf.Clamp(velocity.x, 0, 40);
+        velocity.x = Mathf.Clamp(velocity.x, 0, 25);
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
     }
