@@ -6,6 +6,7 @@ using UnityEngine;
 public class Controller2D : MonoBehaviour
 {
     public LayerMask collisionMask;
+    public LayerMask hazardMask;
 
     const float skinWidth = 0.015f;
     public int horizontalRayCount = 4;
@@ -17,10 +18,21 @@ public class Controller2D : MonoBehaviour
     public BoxCollider2D boxCollider;
     RaycastOrigins raycastOrigins;
     public CollisionInfo collisions;
+    bool invulnerable;
+    float invulnCooldown = 1;
+    float cooldownGoneTime;
+
+    Player playerScript;
 
     private void Awake() {
         boxCollider = GetComponent<BoxCollider2D>();
         CalculateRaySpacing();
+    }
+
+    private void Start() {
+        if (gameObject.tag == "Player") {
+            playerScript = GetComponent<Player>();
+        }
     }
 
     public void Move(Vector3 velocity) {
@@ -30,8 +42,34 @@ public class Controller2D : MonoBehaviour
         if (velocity.y != 0) {
             VerticalCollisions(ref velocity);
         }
+        if (gameObject.tag == "Player" && Time.time >= cooldownGoneTime) {
+            HorizontalCollisions(ref velocity);
+        }
 
         transform.Translate(velocity);
+    }
+
+    void HorizontalCollisions(ref Vector3 velocity) {
+        float directionX = Mathf.Sign(velocity.x);
+        float rayLength = Mathf.Abs(velocity.x) + skinWidth;
+
+        for (int i = 0; i < horizontalRayCount; i++) {
+            Vector2 rayOrigin = (directionX == -1) ? raycastOrigins.bottomLeft : raycastOrigins.bottomRight;
+            rayOrigin += Vector2.up * (verticalRaySpacing * i + velocity.y);
+            RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.right * directionX, rayLength, hazardMask);
+
+            Debug.DrawRay(rayOrigin, Vector2.right * directionX * rayLength, Color.red);
+
+            if (hit) {
+                if (hit.collider.tag == "Hazard" && Time.time >= cooldownGoneTime) {
+                    Debug.Log("Hit hazard");
+                    cooldownGoneTime = Time.time + invulnCooldown;
+
+                    playerScript.velocity.x = Mathf.Clamp(playerScript.velocity.x - 15f, 0, float.MaxValue);
+                    continue;
+                }
+            }
+        }
     }
 
     void VerticalCollisions(ref Vector3 velocity) {
