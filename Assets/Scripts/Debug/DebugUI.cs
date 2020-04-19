@@ -24,7 +24,7 @@ public class DebugUI : MonoBehaviour
         if (showingDebug) {
             playerCollisionsBelow.text = "Grounded: " + ((player.controller.collisions.below) ? "true" : "false");
             playerGravity.text = "Gravity: " + player.gravity;
-            playerJumpVelocity.text = "Jump velocity: " + player.jumpVelocity;
+            playerJumpVelocity.text = "Jump velocity: " + player.maxJumpVelocity;
             playerVelocity.text = "Velocity X: " + player.velocity.x + " Y: " + player.velocity.y;
         }
 

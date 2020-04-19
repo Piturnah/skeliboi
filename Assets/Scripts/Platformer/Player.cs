@@ -5,12 +5,14 @@ using UnityEngine;
 [RequireComponent(typeof(Controller2D))]
 public class Player : MonoBehaviour
 {
-    float jumpHeight = 2;
-    float timeToJumpApex = .2f;
+    float maxJumpHeight = 10;
+    float minJumpHeight = 1;
+    float timeToJumpApex = .4f;
     float moveAcceleration = 10;
 
     public float gravity;
-    public float jumpVelocity;
+    public float maxJumpVelocity;
+    float minJumpVelocity;
     public Vector3 velocity;
 
     public Controller2D controller;
@@ -18,8 +20,9 @@ public class Player : MonoBehaviour
     private void Start() {
         controller = GetComponent<Controller2D>();
 
-        gravity = -(2 * jumpHeight) / Mathf.Pow(timeToJumpApex, 2);
-        jumpVelocity = Mathf.Abs(gravity) * timeToJumpApex;
+        gravity = -(2 * maxJumpHeight) / Mathf.Pow(timeToJumpApex, 2);
+        maxJumpVelocity = Mathf.Abs(gravity) * timeToJumpApex;
+        minJumpVelocity = Mathf.Sqrt(2 * Mathf.Abs(gravity) * minJumpHeight);
     }
 
     private void Update() {
@@ -29,7 +32,12 @@ public class Player : MonoBehaviour
         }
 
         if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow)) && controller.collisions.below) {
-            velocity.y = jumpVelocity;
+            velocity.y = maxJumpVelocity;
+        }
+        if (Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.UpArrow)) {
+            if (velocity.y > minJumpVelocity) {
+                velocity.y = minJumpVelocity;
+            }
         }
 
         velocity.x += moveAcceleration * Time.deltaTime;
