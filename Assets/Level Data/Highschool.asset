@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5aa87b5703435e499ce65b9bf601fc1, type: 3}
+  m_Name: Highschool
+  m_EditorClassIdentifier: 
+  bgTiles:
+  - {fileID: 6280918085400052718, guid: 7c8adc780abbbca46a9c57bcc60c8543, type: 3}
+  - {fileID: 5548699239925962331, guid: 2bb2e564bdcefad4eb3a3b0484975bd5, type: 3}
+  - {fileID: 8757119384516014424, guid: a948694dc62e3a746846e3288c926d87, type: 3}
+  - {fileID: 3574743612287608479, guid: 5b9d97145eb2fc045a7d79645065b9e5, type: 3}
+  hazards: []
+  floorTiles: []
