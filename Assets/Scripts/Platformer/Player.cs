@@ -5,8 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(Controller2D))]
 public class Player : MonoBehaviour
 {
-    float maxJumpHeight = 3.65f;
-    float minJumpHeight = 1;
+    float maxJumpHeight = 15f;
+    float minJumpHeight = 3;
     float timeToJumpApex = .3f;
     float moveAcceleration = 2;
 
@@ -17,6 +17,8 @@ public class Player : MonoBehaviour
 
     public Controller2D controller;
 
+    public float maxVelocity = 40;
+
     private void Start() {
         controller = GetComponent<Controller2D>();
 
@@ -24,7 +26,7 @@ public class Player : MonoBehaviour
         maxJumpVelocity = Mathf.Abs(gravity) * timeToJumpApex;
         minJumpVelocity = Mathf.Sqrt(2 * Mathf.Abs(gravity) * minJumpHeight);
 
-        velocity.x = 15;
+        velocity.x = maxVelocity;
     }
 
     private void Update() {
@@ -43,7 +45,7 @@ public class Player : MonoBehaviour
         }
 
         velocity.x += moveAcceleration * Time.deltaTime;
-        velocity.x = Mathf.Clamp(velocity.x, 0, 15);
+        velocity.x = Mathf.Clamp(velocity.x, 0, maxVelocity);
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
     }

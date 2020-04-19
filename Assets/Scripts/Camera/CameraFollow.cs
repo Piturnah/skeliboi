@@ -8,6 +8,6 @@ public class CameraFollow : MonoBehaviour
     float offsetX = 4;
 
     private void LateUpdate() {
-        transform.position = Vector3.right * (target.transform.position.x + offsetX) + Vector3.up * 2.44f + Vector3.forward * -10;
+        transform.position = Vector3.right * (target.transform.position.x + offsetX) + Vector3.up * 8f + Vector3.forward * -10;
     }
 }
