@@ -14,11 +14,11 @@ public class Controller2D : MonoBehaviour
     float horizontalRaySpacing;
     float verticalRaySpacing;
 
-    BoxCollider2D boxCollider;
+    public BoxCollider2D boxCollider;
     RaycastOrigins raycastOrigins;
     public CollisionInfo collisions;
 
-    private void Start() {
+    private void Awake() {
         boxCollider = GetComponent<BoxCollider2D>();
         CalculateRaySpacing();
     }
@@ -46,6 +46,12 @@ public class Controller2D : MonoBehaviour
             Debug.DrawRay(rayOrigin, Vector2.up * directionY * rayLength, Color.red);
 
             if (hit) {
+                if (hit.collider.tag == "Through") {
+                    if (directionY == 1) {
+                        continue;
+                    }
+                }
+
                 velocity.y = (hit.distance - skinWidth) * directionY;
                 rayLength = hit.distance;
 

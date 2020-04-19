@@ -5,9 +5,9 @@ using UnityEngine;
 [RequireComponent(typeof(Controller2D))]
 public class Player : MonoBehaviour
 {
-    float maxJumpHeight = 10;
+    float maxJumpHeight = 3.65f;
     float minJumpHeight = 1;
-    float timeToJumpApex = .4f;
+    float timeToJumpApex = .3f;
     float moveAcceleration = 10;
 
     public float gravity;
