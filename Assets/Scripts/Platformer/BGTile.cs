@@ -11,7 +11,7 @@ public class BGTile : MonoBehaviour
     }
 
     private void Update() {
-        if ((player.position - transform.position).magnitude > 75) {
+        if ((player.position - transform.position).magnitude > 110) {
             Destroy(gameObject);
         }
     }

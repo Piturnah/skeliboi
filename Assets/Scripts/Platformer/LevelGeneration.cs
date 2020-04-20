@@ -22,7 +22,7 @@ public class LevelGeneration : MonoBehaviour
         startingLocation = new Vector2(7.9f, 9.98f);
         player = FindObjectOfType<Player>().GetComponent<Transform>();
 
-        for (int i = 0; tileIteration < 3; tileIteration++) {
+        for (int i = 0; tileIteration < 4; tileIteration++) {
             int index = random.Next(data[level].bgTiles.Count);
             Instantiate(data[level].bgTiles[index], startingLocation + Vector2.right * dstBtwTiles * tileIteration, Quaternion.identity);
         }
@@ -31,7 +31,7 @@ public class LevelGeneration : MonoBehaviour
     }
 
     private void Update() {
-        if ((player.position - prevPlayerPosition).magnitude >= dstBtwTiles) {
+        if (player.position.x - prevPlayerPosition.x >= dstBtwTiles) {
             int index = random.Next(data[level].bgTiles.Count);
             Instantiate(data[level].bgTiles[index], startingLocation + Vector2.right * dstBtwTiles * tileIteration, Quaternion.identity);
 
