@@ -1255,12 +1255,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cac232564767abc4ebd346ca7d8d1ee3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 0
+  level: 1
   data:
   - {fileID: 11400000, guid: f3149044b399ccf4caa38d1aa792f433, type: 2}
   - {fileID: 11400000, guid: c91e4ea72c8bcc546a6e43d79bd948a1, type: 2}
   - {fileID: 11400000, guid: d1f6b0f587b50be49b534bf8385f3902, type: 2}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: f3149044b399ccf4caa38d1aa792f433, type: 2}
 --- !u!1 &1971079508
 GameObject:
   m_ObjectHideFlags: 0

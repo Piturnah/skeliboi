@@ -6,6 +6,6 @@ using UnityEngine;
 public class LevelData : ScriptableObject
 {
     public List<GameObject> bgTiles;
-    public List<Sprite> hazards;
+    public List<GameObject> hazards;
     public List<Sprite> floorTiles;
 }
