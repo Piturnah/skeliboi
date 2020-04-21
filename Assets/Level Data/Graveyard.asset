@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5aa87b5703435e499ce65b9bf601fc1, type: 3}
+  m_Name: Graveyard
+  m_EditorClassIdentifier: 
+  bgTiles:
+  - {fileID: 3451417961556745795, guid: 0b871abeb4792d640bccca474bd7d471, type: 3}
+  - {fileID: 3764526098181856645, guid: 4d3c9e2ebef6fdf4abf0dfe71c9bd7fa, type: 3}
+  - {fileID: 7404719936250992466, guid: 75aab2dd85e1a5b4cb963f7a395a478a, type: 3}
+  - {fileID: 5934919045057860399, guid: 7136fe72b528d544c8064448089e33c9, type: 3}
+  - {fileID: 6415792944607942952, guid: 01a665c8314f7e948b1b7d5ffc0a51e1, type: 3}
+  hazards:
+  - {fileID: 5648832689890575352, guid: a874adcf5fdb99a4281ff1023385f710, type: 3}
+  - {fileID: 7928821057127175706, guid: 2f495a6c9f87a9148b8aa168b1be31a1, type: 3}
+  - {fileID: 8054387776843475636, guid: 6357b7842199eee41b901481046e33e8, type: 3}
+  - {fileID: 1128169923590507110, guid: 617a472419e90d645884bb4009b9548f, type: 3}
+  - {fileID: 229763728560333582, guid: 1457851ef76d9924ea7a1a0a05738273, type: 3}
+  floorTiles: []

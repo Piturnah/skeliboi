@@ -26,6 +26,9 @@ TextureImporter:
   - first:
       213: 5729419226844275359
     second: Hallway_Tiles_3
+  - first:
+      213: -9114018450598699942
+    second: Hallway_Tiles_4
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -213,6 +216,27 @@ TextureImporter:
       bones: []
       spriteID: f92a8595e6cf28f40800000000000000
       internalID: 5729419226844275359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hallway_Tiles_4
+      rect:
+        serializedVersion: 2
+        x: 1300
+        y: 0
+        width: 325
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5c55bfd180848180800000000000000
+      internalID: -9114018450598699942
       vertices: []
       indices: 
       edges: []

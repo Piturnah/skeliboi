@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5aa87b5703435e499ce65b9bf601fc1, type: 3}
+  m_Name: City
+  m_EditorClassIdentifier: 
+  bgTiles:
+  - {fileID: 7486332634699357758, guid: 38e19d03586e688438519b11a569491b, type: 3}
+  - {fileID: 657401322572534771, guid: 230b91409ef86584a9981e8529c71418, type: 3}
+  - {fileID: 2068195455473926544, guid: f8a63c931e5d7fd4b8c54f97aaa016c4, type: 3}
+  - {fileID: 5494503897647052247, guid: 35f31b2f908a0fe41aa0b32537a7b993, type: 3}
+  - {fileID: 1034098762906443944, guid: 1e5b022b44be4cf468abdc0444d1ab98, type: 3}
+  hazards:
+  - {fileID: 3729226230244328453, guid: 82567da4279a19446aa2744f6042c8b4, type: 3}
+  - {fileID: 1863849408183741600, guid: f23e82b90708a5c44937c2ada9e69fe3, type: 3}
+  - {fileID: 2798231553580359074, guid: bf1229251a6d7c046a793d82828fd617, type: 3}
+  floorTiles: []

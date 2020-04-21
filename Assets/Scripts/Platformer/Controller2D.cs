@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 [RequireComponent(typeof(BoxCollider2D))]
 public class Controller2D : MonoBehaviour
@@ -24,6 +25,9 @@ public class Controller2D : MonoBehaviour
 
     Player playerScript;
 
+    public static event Action onHit;
+    AudioSource audio;
+
     private void Awake() {
         boxCollider = GetComponent<BoxCollider2D>();
         CalculateRaySpacing();
@@ -32,6 +36,7 @@ public class Controller2D : MonoBehaviour
     private void Start() {
         if (gameObject.tag == "Player") {
             playerScript = GetComponent<Player>();
+            audio = GetComponent<AudioSource>();
         }
     }
 
@@ -64,8 +69,10 @@ public class Controller2D : MonoBehaviour
                 if (hit.collider.tag == "Hazard" && Time.time >= cooldownGoneTime) {
                     Debug.Log("Hit hazard");
                     cooldownGoneTime = Time.time + invulnCooldown;
+                    audio.Play();
 
-                    playerScript.velocity.x = Mathf.Clamp(playerScript.velocity.x - 5f, 0, float.MaxValue);
+                    playerScript.velocity.x = Mathf.Clamp(playerScript.velocity.x - 0.75f * playerScript.maxVelocity, 0, float.MaxValue);
+                    onHit?.Invoke();
                     continue;
                 }
             }

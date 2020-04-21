@@ -2,25 +2,50 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Controller2D))]
 public class EnemyController : MonoBehaviour
 {
-    float moveAcceleration = 7;
-    Vector3 velocity;
+    Player player;
+    float offsetX = -30;
+    float velocityMultiplier = 0.7f;
+    AudioSource audio;
 
-    Controller2D controller;
-    Transform player;
+    bool playerDead;
 
     private void Start() {
-        controller = GetComponent<Controller2D>();
-        velocity.x = 39;
-        player = FindObjectOfType<Player>().transform;
+
+        Player.onDeath += OnPlayerDies;
+        gameObject.SetActive(false);
+        audio = GetComponent<AudioSource>();
+
+        player = FindObjectOfType<Player>().GetComponent<Player>();
+        Controller2D.onHit += OnPlayerHitsHazard;
     }
 
-    void Update()
-    {
-        velocity.x += moveAcceleration * Time.deltaTime;
-        velocity.x = Mathf.Clamp(velocity.x, 0, ((player.position - transform.position).magnitude > 12f) ? 40 : 39);
-        controller.Move(velocity * Time.deltaTime);
+    private void OnDestroy() {
+        Controller2D.onHit -= OnPlayerHitsHazard;
+        Player.onDeath -= OnPlayerDies;
+    }
+
+    private void Update() {
+        if (gameObject.activeInHierarchy && !playerDead) {
+            transform.Translate(Vector3.right * player.maxVelocity * velocityMultiplier * Time.deltaTime);
+        }
+
+        if ((player.transform.position - transform.position).magnitude > 50) {
+            gameObject.SetActive(false);
+        }
+    }
+
+    void OnPlayerHitsHazard() {
+        if (!gameObject.activeInHierarchy) {
+            transform.position = new Vector3(player.transform.position.x + offsetX, - 0.29f, -5f);
+            gameObject.SetActive(true);
+            audio.Play();
+        }
+    }
+
+    void OnPlayerDies() {
+        playerDead = true;
+        GetComponentInChildren<Animator>().enabled = false;
     }
 }

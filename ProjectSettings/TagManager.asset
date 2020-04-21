@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Through
   - Hazard
+  - EndScreen
+  - Enemy
   layers:
   - Default
   - TransparentFX

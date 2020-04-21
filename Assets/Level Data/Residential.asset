@@ -18,5 +18,8 @@ MonoBehaviour:
   - {fileID: 841583940795815296, guid: 7fffac7d0b5c0ab418b668dbde1efdba, type: 3}
   - {fileID: 5879120791531583962, guid: a45e76533d81303419155a580bbb91b1, type: 3}
   - {fileID: 1266690678991452930, guid: 93c7e145796033447ba2e2182e390891, type: 3}
-  hazards: []
+  hazards:
+  - {fileID: 6663113594855916659, guid: 15d0e01d4589d3c458aafb824177c834, type: 3}
+  - {fileID: 2081442050488978008, guid: 919194b48054e8240811ba9b06f12d86, type: 3}
+  - {fileID: 6572484707167684411, guid: d86414fabfa69074fae3bd9682e7e5b9, type: 3}
   floorTiles: []

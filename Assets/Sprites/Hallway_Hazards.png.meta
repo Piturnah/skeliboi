@@ -11,6 +11,18 @@ TextureImporter:
   - first:
       213: 5444006150745959014
     second: Hallway_Hazards_2
+  - first:
+      213: -3515974400720611724
+    second: Hallway_Hazards_0
+  - first:
+      213: 8351470016100292548
+    second: Hallway_Hazards_1
+  - first:
+      213: 3247167966578540094
+    second: Hallway_Hazards_2
+  - first:
+      213: -6272718733303216668
+    second: Hallway_Hazards_3
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -40,7 +52,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -122,10 +134,10 @@ TextureImporter:
       name: Hallway_Hazards_0
       rect:
         serializedVersion: 2
-        x: 15
+        x: 5
         y: 0
-        width: 55
-        height: 50
+        width: 65
+        height: 55
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -133,8 +145,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7b26bf02abc8d7fa0800000000000000
-      internalID: -5801326013938179401
+      spriteID: 4765ea539efb43fc0800000000000000
+      internalID: -3515974400720611724
       vertices: []
       indices: 
       edges: []
@@ -143,10 +155,10 @@ TextureImporter:
       name: Hallway_Hazards_1
       rect:
         serializedVersion: 2
-        x: 85
+        x: 75
         y: 0
-        width: 35
-        height: 50
+        width: 45
+        height: 55
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,8 +166,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 11f61110113e4efe0800000000000000
-      internalID: -1160553141782876399
+      spriteID: 4c7dbfd4bb166e370800000000000000
+      internalID: 8351470016100292548
       vertices: []
       indices: 
       edges: []
@@ -164,10 +176,10 @@ TextureImporter:
       name: Hallway_Hazards_2
       rect:
         serializedVersion: 2
-        x: 150
+        x: 130
         y: 0
-        width: 45
-        height: 75
+        width: 50
+        height: 80
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -175,8 +187,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 66a214220cefc8b40800000000000000
-      internalID: 5444006150745959014
+      spriteID: e3ef0f5bf02401d20800000000000000
+      internalID: 3247167966578540094
       vertices: []
       indices: 
       edges: []
